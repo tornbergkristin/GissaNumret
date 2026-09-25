@@ -15,12 +15,12 @@
             {
                 Console.WriteLine($"Försök {attempts + 1}!\nGissa ett tal: "); //To let the player know on what attempt they're on.
                 string input = Console.ReadLine();
-                if (!int.TryParse(input, out int guess))
+                if (!int.TryParse(input, out int guess)) //When adding through Console.ReadLine it is made a string, but I want the answer as an int therefore I have to convert int to a string by using TryParse.
                 {
                     Console.WriteLine("Felaktig inmatning! Du måste ange ett heltal.");
                     continue;
                 }
-                attempts++; //Adding to every attempt made att guessing the right number.
+                attempts++; //Adding to every attempt made at guessing the right number.
                 if (CheckGuess(guess, SecretNumber))
                 {
                     Console.WriteLine($"Wohoo! Du klarade utmaningen på {attempts} försök.");
